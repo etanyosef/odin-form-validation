@@ -26,7 +26,50 @@
                     <label for="name" data-help="Enter your first name">Name</label>
                 </div>
                 <div class="comment-form-surname">
-                    
+                    <input type="text"
+                            id="surname"
+                            class="surname"
+                            placeholder="Surname *"
+                            size="30"
+                            maxlength="245"
+                            required >
+                    <label for="surname" data-help="Enter your last name">Surname</label>
+                </div>
+                <div class="comment-form-email">
+                    <input type="email" 
+                            name="email" 
+                            id="email" 
+                            placeholder="Email *"
+                            size="30"
+                            maxlength="100"
+                            aria-describedby="email-notes"
+                            required >
+                    <label for="email" data-help="Format email@email.com">Email</label>
+                </div>
+                <div class="comment-form-url">
+                    <input type="url"
+                            name="url"
+                            id="url"
+                            placeholder="Website"
+                            size="30"
+                            maxlength="200">
+                    <label for="url" data-help="Should start with http:// or https://">Website</label>
+                </div>
+                <div class="comment-form-comment">
+                    <textarea name="comment" 
+                                id="comment"
+                                placeholder="Comment *"
+                                cols="45"
+                                rows="8"
+                                maxlength="655"
+                                required >
+                    </textarea>
+                    <label for="comment" data-help="Enter a comment"></label>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" id="submit" class="submit">
+                        Post Comment
+                    </button>
                 </div>
 
             </form>
