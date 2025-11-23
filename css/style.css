@@ -1,0 +1,216 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    color: #666;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    max-width: 100%;
+    vertical-align: baseline;
+}
+
+textarea, input {
+    outline: none;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+
+/* Layout stuff */
+.comment-section {
+    width: 100%;
+    max-width: 760px;
+    margin: 30px auto;
+}
+
+h1 {
+    padding: 15px;
+    margin: 0;
+}
+
+.comment-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comment-form > [class^="comment-form"],
+.comment-form > .form-submit {
+    position: relative;
+    min-height: 1;
+    padding: 15px;
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 600px) {
+    .comment-form > .comment-form-name,
+    .comment-form > .comment-form-surname,
+    .comment-form > .comment-form-email,
+    .comment-form > .comment-form-url {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+}
+
+/* Form stuff */
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+    background-color: #fff;
+    padding: 24px 10px 12px;
+    font-size: 16px;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+:focus {
+    outline: 0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    background-color: #fff;
+}
+
+/* animations */
+@keyframes silo-fade {
+    0% {
+        opacity: 0;
+        transform: translateY(-1.4em);
+    }
+    100% {
+        opacity: 1;
+        transform: (0);
+    }
+}
+
+@keyframes silo-help {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Label style */
+.comment-form label {
+    padding: 5px 0;
+    font-size: 14px;
+    font-size: 0.75rem;
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 26px;
+    color: #8bc34a;
+    animation: silo-fade 0.2s;
+    max-width: 80%;
+}
+
+.comment-form input:focus + label,
+.comment-form input[required]:valid + label,
+.comment-form input:not(:placeholder-shown) + label,
+.comment-form textarea:focus + label,
+.comment-form textarea:valid + label,
+.comment-form textarea:not(:placeholder-shown) + label {
+    display: block;
+}
+
+.comment-form input:invalid,
+.comment-form textarea:invalid {
+    border: 1px solid #b92326;
+    background-color: rgba(185 35 38 / 0.25);
+}
+
+.comment-form input:focus:invalid,
+.comment-form textarea:focus:invalid {
+    background-color: transparent;
+    border: 1px solid #b92326;
+}
+
+.comment-form input:invalid + label,
+.comment-form textarea:invalid + label {
+    color: #b92326;
+}
+
+.comment-form input:focus:invalid + label::after,
+.comment-form textarea:focus:invalid + label::after {
+    content: " (" attr(data-help) ")";
+    animation: silo-help 50s;
+}
+
+.comment-form input:valid,
+.comment-form textarea:valid {
+    border: 1px solid #8bc34a;
+    background-color: rgba(139 195 74 / 0.25);
+}
+
+.comment-form input:focus:valid,
+.comment-form textarea:focus:valid {
+    border: 1px solid #8bc34a;
+    background-color: transparent;
+}
+
+.comment-form input:valid + label,
+.comment-form textarea:valid + label {
+    color: #8bc34a;
+}
+
+.comment-form input:placeholder-shown,
+.comment-form textarea:placeholder-shown {
+    background-color: transparent;
+    border: 1px solid #d8d8d8;
+}
+
+.comment-form input::placeholder,
+.comment-form textarea::placeholder {
+    color: #b6b6b6;
+}
+
+.comment-form input:focus::placeholder,
+.comment-form textarea:focus::placeholder {
+    color: transparent;
+}
+
+.comment-form button[type="submit"] {
+    background-color: transparent;
+    border: 1px solid #8bc34a;
+    color: #8bc34a;
+    padding: 5px 15px;
+    font-size: 16px;
+    margin: 15px auto;
+    display: block;
+    cursor: pointer;
+}
+.comment-form button[type="submit"]:hover {
+    background-color: rgba(139 195 74 / 0.25);
+    border: 1px solid #8bc34a;
+}
