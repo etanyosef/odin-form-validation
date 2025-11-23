@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Form Validation Tutorial</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+
+        <div class="comment-section">
+            <h1 class="comment-reply-title">Write your comment!</h1>
+
+            <form action="#" class="comment-form" id="comment-form">
+
+                <div class="comment-form-name">
+                    <input type="text" 
+                            id="name"
+                            name="name"
+                            placeholder="Name *"
+                            pattern="^[^0-9]+ $"
+                            size="30"
+                            maxlength="245"
+                            required >
+                    <label for="name" data-help="Enter your first name">Name</label>
+                </div>
+                <div class="comment-form-surname">
+                    
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+</body>
+</html>
